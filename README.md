@@ -1,9 +1,9 @@
-# ruach-api
+# semma-api
 
 > Core transcription engine — Part of the Ruach STT platform
 
 Low-latency REST API written in Go. Receives audio in any format, converts with
-ffmpeg, forwards to a fine-tuned ruach STT model, and returns Amharic transcript
+ffmpeg, forwards to a fine-tuned semma STT model, and returns Amharic transcript
 with timestamps in under 2 seconds.
 
 
@@ -24,7 +24,7 @@ Ratio             →  5x realtime
 ```
 Browser (any format)
         ↓
-   ruach-api (Go)
+   semma-api (Go)
         ↓
    ffmpeg → wav 16kHz mono
         ↓
@@ -98,10 +98,10 @@ curl http://localhost:3000/api/health
 
 ```
 API_PORT   → 3000 (default)
-RUACH_URL  → http://localhost:8000 (default)
-DB_PATH    → ./data/ruach.db (default)
+SEMMA_URL  → http://localhost:8000 (default)
+DB_PATH    → ./data/semma.db (default)
 ```
 
 ---
 
-*Part of the Ruach STT platform — by Awet Tsegazeab*
+*Part of the SEMMA STT platform — by Awet Tsegazeab*

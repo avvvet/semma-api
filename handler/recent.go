@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/avvvet/ruach-api/store"
+	"github.com/avvvet/semma-api/store"
 )
 
 func Recent(w http.ResponseWriter, r *http.Request) {

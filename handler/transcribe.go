@@ -11,9 +11,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/avvvet/ruach-api/config"
-	"github.com/avvvet/ruach-api/service"
-	"github.com/avvvet/ruach-api/store"
+	"github.com/avvvet/semma-api/config"
+	"github.com/avvvet/semma-api/service"
+	"github.com/avvvet/semma-api/store"
 	"github.com/google/uuid"
 )
 

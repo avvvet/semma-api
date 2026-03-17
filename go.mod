@@ -1,4 +1,4 @@
-module github.com/avvvet/ruach-api
+module github.com/avvvet/semma-api
 
 go 1.23.2
 

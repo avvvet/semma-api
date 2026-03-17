@@ -34,4 +34,6 @@ Thumbs.db
 *.log
 
 # Ignore .db kv store
-.db
+ruach.db
+semma.db
+*.db

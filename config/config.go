@@ -22,11 +22,11 @@ type Config struct {
 func Load() *Config {
 	return &Config{
 		APIPort:     getEnv("API_PORT", "3000"),
-		RuachURL:    getEnv("RUACH_URL", "http://localhost:8000"),
+		RuachURL:    getEnv("SEMMA_URL", "http://localhost:8000"),
 		ModelName:   getEnv("MODEL_NAME", "whisper-medium-am-v1-47wer-v2"),
-		DBPath:      getEnv("DB_PATH", "./data/ruach.db"),
+		DBPath:      getEnv("DB_PATH", "./data/semma.db"),
 		RecentLimit: 10,
-		MaxFileSize: 2 << 20, // 2MB
+		MaxFileSize: int64(getEnvInt("MAX_FILE_SIZE", 200)) << 20, //2 << 20, // 2MB
 		MaxDuration: float64(getEnvInt("MAX_DURATION", 30)),
 
 		BotToken: getEnv("BOT_TOKEN", ""),

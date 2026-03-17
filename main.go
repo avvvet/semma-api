@@ -7,10 +7,10 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/avvvet/ruach-api/config"
-	"github.com/avvvet/ruach-api/handler"
-	"github.com/avvvet/ruach-api/service"
-	"github.com/avvvet/ruach-api/store"
+	"github.com/avvvet/semma-api/config"
+	"github.com/avvvet/semma-api/handler"
+	"github.com/avvvet/semma-api/service"
+	"github.com/avvvet/semma-api/store"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
@@ -82,10 +82,10 @@ func main() {
 	}
 	// ─────────────────────────────────────────────────────────
 
-	log.Printf("ruach-api: starting on port %s", cfg.APIPort)
-	log.Printf("ruach-api: forwarding to %s", cfg.RuachURL)
+	log.Printf("semma-api: starting on port %s", cfg.APIPort)
+	log.Printf("semma-api: forwarding to %s", cfg.RuachURL)
 
 	if err := http.ListenAndServe(":"+cfg.APIPort, r); err != nil {
-		log.Fatalf("ruach-api: server error: %v", err)
+		log.Fatalf("semma-api: server error: %v", err)
 	}
 }
