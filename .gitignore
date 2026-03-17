@@ -36,3 +36,6 @@ Thumbs.db
 # database files
 *.db
 /data/
+
+# binary
+semma-api
