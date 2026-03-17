@@ -79,8 +79,8 @@ func Transcribe(cfg *config.Config) http.HandlerFunc {
 			"-y",
 			wavPath,
 		)
-		out, err := cmd.CombinedOutput()
-		log.Printf("ffmpeg output: %s", out)
+		_, err = cmd.CombinedOutput()
+		//log.Printf("ffmpeg output: %s", out)
 		if err != nil {
 			log.Printf("ffmpeg error: %v", err)
 			writeError(w, "audio conversion failed", http.StatusBadRequest)
@@ -88,7 +88,7 @@ func Transcribe(cfg *config.Config) http.HandlerFunc {
 		}
 
 		// send to Ruach
-		result, err := service.Transcribe(cfg.RuachURL, cfg.ModelName, wavPath)
+		result, err := service.Transcribe(cfg.SemmaURL, cfg.ModelName, wavPath)
 		if err != nil {
 			log.Printf("whisper error: %v", err)
 			writeError(w, "transcription failed", http.StatusInternalServerError)

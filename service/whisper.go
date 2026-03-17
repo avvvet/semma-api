@@ -26,7 +26,7 @@ type WhisperResponse struct {
 	Segments []Segment `json:"segments"`
 }
 
-func Transcribe(ruachURL, modelName, wavPath string) (*WhisperResponse, error) {
+func Transcribe(semmaURL, modelName, wavPath string) (*WhisperResponse, error) {
 	f, err := os.Open(wavPath)
 	if err != nil {
 		return nil, fmt.Errorf("whisper: open wav: %w", err)
@@ -52,7 +52,7 @@ func Transcribe(ruachURL, modelName, wavPath string) (*WhisperResponse, error) {
 
 	// send request
 	resp, err := http.Post(
-		ruachURL+"/v1/audio/transcriptions",
+		semmaURL+"/v1/audio/transcriptions",
 		w.FormDataContentType(),
 		&buf,
 	)

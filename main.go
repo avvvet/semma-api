@@ -38,7 +38,7 @@ func main() {
 	// middleware
 	r.Use(middleware.Logger)
 	r.Use(middleware.Recoverer)
-	r.Use(middleware.Timeout(60 * time.Second))
+	r.Use(middleware.Timeout(120 * time.Second))
 	r.Use(middleware.CleanPath)
 
 	// cors — allow Svelte dev and production
@@ -83,7 +83,7 @@ func main() {
 	// ─────────────────────────────────────────────────────────
 
 	log.Printf("semma-api: starting on port %s", cfg.APIPort)
-	log.Printf("semma-api: forwarding to %s", cfg.RuachURL)
+	log.Printf("semma-api: forwarding to %s", cfg.SemmaURL)
 
 	if err := http.ListenAndServe(":"+cfg.APIPort, r); err != nil {
 		log.Fatalf("semma-api: server error: %v", err)

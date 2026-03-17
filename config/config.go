@@ -7,7 +7,7 @@ import (
 
 type Config struct {
 	APIPort     string
-	RuachURL    string
+	SemmaURL    string
 	ModelName   string
 	DBPath      string
 	RecentLimit int
@@ -22,7 +22,7 @@ type Config struct {
 func Load() *Config {
 	return &Config{
 		APIPort:     getEnv("API_PORT", "3000"),
-		RuachURL:    getEnv("SEMMA_URL", "http://localhost:8000"),
+		SemmaURL:    getEnv("SEMMA_URL", "http://localhost:8000"),
 		ModelName:   getEnv("MODEL_NAME", "whisper-medium-am-v1-47wer-v2"),
 		DBPath:      getEnv("DB_PATH", "./data/semma.db"),
 		RecentLimit: 10,
