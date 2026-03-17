@@ -33,7 +33,6 @@ Thumbs.db
 # Ignore .log
 *.log
 
-# Ignore .db kv store
-ruach.db
-semma.db
+# database files
 *.db
+/data/
