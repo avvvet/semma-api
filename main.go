@@ -47,6 +47,7 @@ func main() {
 			"http://localhost:5173", // svelte dev
 			"http://localhost:4173", // svelte preview
 			"http://localhost:3000",
+			"https://upupgo.online",
 		},
 		AllowedMethods: []string{"GET", "POST", "OPTIONS"},
 		AllowedHeaders: []string{"Content-Type"},
